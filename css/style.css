@@ -1,0 +1,138 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+@media only screen and (max-width: 43.75em) {
+  html {
+    font-size: 58%;
+  }
+}
+
+body {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 500;
+  line-height: 1.2;
+  background-color: #cfcfcf;
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+}
+
+.text-dark {
+  color: #19212e;
+}
+
+.text-light {
+  color: white;
+}
+
+.testimonial__card {
+  padding: 2.5rem;
+  border-radius: 0.5rem;
+  position: relative;
+  box-shadow: 0.5rem 0.5rem 2rem rgba(25, 33, 46, 0.1);
+}
+.testimonial__card--1 {
+  background-color: #7541c8;
+  grid-area: daniel;
+}
+.testimonial__card--1::before {
+  content: "\201C";
+  position: absolute;
+  top: -5rem;
+  right: 10%;
+  line-height: 1;
+  font-size: 50rem;
+  opacity: 0.3;
+  font-family: sans-serif;
+  z-index: 1;
+}
+.testimonial__card--2 {
+  background-color: #48556a;
+  grid-area: jonathan;
+}
+.testimonial__card--3 {
+  background-color: white;
+  grid-area: jeanette;
+}
+.testimonial__card--4 {
+  background-color: #19212e;
+  grid-area: patrick;
+}
+.testimonial__card--5 {
+  background-color: white;
+  grid-area: kira;
+}
+
+.testimonial__person-info {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: start;
+  margin-bottom: 2rem;
+}
+
+.testimonial__photo {
+  height: 4rem;
+  width: 4rem;
+  display: block;
+  border-radius: 50%;
+}
+
+.testimonial__name {
+  font-weight: 600;
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.testimonial__status {
+  font-size: 1.2rem;
+  opacity: 0.5;
+}
+
+.testimonial__header {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.testimonial__text {
+  line-height: 1.5;
+  opacity: 0.7;
+}
+
+.testimonial-container {
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 3rem;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(min-content, 1fr));
+  grid-template-areas:
+    "daniel daniel jonathan kira"
+    "jeanette patrick patrick kira";
+  gap: 2.5rem;
+}
+@media only screen and (max-width: 62.5em) {
+  .testimonial-container {
+    grid-template-columns: repeat(2, minmax(min-content, 1fr));
+    grid-template-areas:
+      "daniel patrick"
+      "kira kira"
+      "jonathan jeanette";
+  }
+}
+@media only screen and (max-width: 37.5em) {
+  .testimonial-container {
+    grid-template-columns: minmax(min-content, 1fr);
+    grid-template-areas: "daniel" "jonathan" "jeanette" "patrick" "kira";
+  }
+}
